@@ -3,6 +3,8 @@ public class UnorderedCircularLinkedList<T> extends CircularLinkedList<T> implem
 	
 	public void addToFront(T elem) {
 	// COMPLETAR EL CODIGO Y CALCULAR EL COSTE --> O(1) constante ya que solo hay que añadir el nodo 
+		//Pre:
+		//post: el elemento tiene que ser el primero de la lista
 		
 		Node<T>nuevo=new Node<T>(elem);
 		
