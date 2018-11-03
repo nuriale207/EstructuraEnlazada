@@ -30,20 +30,24 @@ public class UnorderedCircularLinkedListTest {
 
 	@Test
 	public void testAddToFront() {
+		//lista vacia
 		l0.addToFront(22);
 		assertEquals(l0.size(),1);
 		assertTrue(l0.first()==22); 
 		
+		//lista de 1 elemento
 		l1.addToFront(4);
 		assertEquals(l1.size(),2);
 		assertTrue(l1.first()==4);
 		assertTrue(l1.contains(4));
 		
+		//Lista de 2 elementos
 		l2.addToFront(7);
 		assertEquals(l2.size(),3);
 		assertTrue(l2.contains(7));
 		assertTrue(l2.first()==7);
 		
+		//lista de 2 o mas elementos
 		l3.addToFront(2);
 		assertEquals(l3.size(),5);
 		assertTrue(l3.contains(2));
@@ -52,7 +56,27 @@ public class UnorderedCircularLinkedListTest {
 
 	@Test
 	public void testAddToRear() {
-		fail("Not yet implemented");
+		//lista vacia
+		l0.addToRear(9);
+		assertEquals(l0.size(),1);
+		assertTrue(l0.contains(9));
+		assertTrue(l0.last()==9);
+		
+		//Lista de 1 elemento
+		l1.addToRear(4); 
+		assertEquals(l1.size(),2);
+		assertTrue(l1.contains(4));
+		assertTrue(l1.last()==4);
+		
+		//Lista de 2 elementos
+		l2.addToRear(7);
+		assertEquals(l2.size(),3);
+		assertTrue(l2.last()==7);
+		
+		//lista de 3 o mas elementos
+		l3.addToRear(2);
+		assertEquals(l3.size(),5);
+		assertTrue(l3.last()==2);
 	}
 
 	@Test
