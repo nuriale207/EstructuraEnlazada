@@ -4,49 +4,36 @@ public class OrderedCircularLinkedList<T extends Comparable<T>> extends Circular
 	
 	public void add(T elem){
 		/*pre:
-		 * post:aÒade el elemento elem en la posiciÛn correspondiente de la lista.
+		 * post:a√±ade el elemento elem en la posici√≥n correspondiente de la lista.
 		 */
-		Node<T> nuevo=new Node<T>(elem);
-		if(isEmpty()){
-			nuevo.next=nuevo;
-			this.last=nuevo;
-			count++;
-		}
+		Node<T>act=last;
+		int contAux=count;
+		Node<T>nuevo=new Node<T>(elem);
 		
-		else{
+		if (last==null) {
+			nuevo.next=nuevo;
+			last=nuevo;
+		}
+		else {
 			
-			Node<T> act=this.last;
-			
-			if(elem.compareTo(act.data)>0){
-					nuevo.next=last.next;
-					last.next=nuevo;
-					last=last.next;
-					count++;
-					
-				}
-			else{
-				act=this.last.next;
-				Node<T> ant=this.last;
-				int cont=0;
-				while(elem.compareTo(act.data)<0&& cont<this.count){
-					act=act.next;
-					ant=ant.next;
-					cont++;
-					
-				}
-				nuevo.next=ant.next;
-				ant.next=nuevo;
-				count++;
-				
+			while(contAux>0 && (elem.compareTo(act.next.data)>0)) { 
+				act=act.next;
+				contAux=contAux-1;
 			}
 			
-		}
+			if (contAux==0) { //se he racorrido toda la lista --> el elemento se a√±ade al final
+				nuevo.next=last.next;
+				last.next=nuevo;
+				last=nuevo;
+			}
+			else {
+				nuevo.next=act.next;
+				act.next=nuevo;
+			}
+		}// end if-else
+		count=count+1;
 
 
-
-
-
-	}
-
+	} //end add
 
 }
