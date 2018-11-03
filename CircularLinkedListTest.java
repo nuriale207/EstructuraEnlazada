@@ -158,10 +158,27 @@ public class CircularLinkedListTest {
 
 	@Test
 	public void testFind() {
+		//Lista vacia
+		assertSame(l0.find(8),null); 
+		
+		//Lista 1 elemento:
+		//Si esta en la lista
+		assertSame(l1.find(1),1);
+		//No esta en la lista
+		assertSame(l1.find(2),null);
+		
+		//Lista 2 elementos:
+		//Si estan
+		assertSame(l2.find(3),3);
+		assertSame(l2.find(4),4);
+		//No esta
+		assertSame(l2.find(10),null);
+		
+		//Lista 3 o mas elementos
 		assertSame(l3.find(3),3);
 		assertSame(l3.find(4),4);
-		assertSame(l3.find(5),5);
 		assertSame(l3.find(6),6);
+		assertSame(l3.find(10),null);
 	}
 
 	@Test
