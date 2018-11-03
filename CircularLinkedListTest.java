@@ -50,20 +50,24 @@ public class CircularLinkedListTest {
 
 	@Test
 	public void testRemoveFirst() {
-		/*Casos de prueba: Lista de un elemento-> Lista vacía.
-		 * 				   Lista de dos elementos -> Lista de un elemento.
-		 * 				   Lista de varios elementos-> Lista sin el primer elemento.
+		/*Casos de prueba: Lista de un elemento-> Lista vacÃ­a.
+		 * 		   Lista de dos elementos -> Lista de un elemento.
+		 * 		   Lista de varios elementos-> Lista sin el primer elemento.
 		 */
-		l1.removeFirst();
+		l1.removeFirst(); 
 		assertEquals(l1.size(),0);
-		
+		assertEquals(l1.last,null);
+
 		l2.removeFirst();
 		assertEquals(l2.size(),1);
 		assertFalse(l2.contains(3));
+		assertTrue(l2.first()==4);
+		assertTrue(l2.last.data==4);
 		
-		l3.removeFirst();
+		l3.removeFirst(); 
 		assertEquals(l3.size(),3);
 		assertFalse(l2.contains(3));
+		assertTrue(l3.first()==4);
 	}
 
 	@Test
@@ -74,12 +78,12 @@ public class CircularLinkedListTest {
 
 	@Test
 	public void testRemove() {
-		/*Casos de prueba: Lista de un elemento-> El elemento está:Lista vacía.
-		 * 										-> El elemento no está: no cambia la lista.
-		 * 				   Lista de dos elementos -> El elemento está:Lista de un elemento.
-		 * 										  -> El elemento no está: no cambia la lista.
-		 * 				   Lista de varios elementos->El elemento está:Lista sin el elemento.
-		 * 										  -> El elemento no está: no cambia la lista.
+		/*Casos de prueba: Lista de un elemento-> El elemento estÃ¡:Lista vacÃ­a.
+		 * 										-> El elemento no estÃ¡: no cambia la lista.
+		 * 				   Lista de dos elementos -> El elemento estÃ¡:Lista de un elemento.
+		 * 										  -> El elemento no estÃ¡: no cambia la lista.
+		 * 				   Lista de varios elementos->El elemento estÃ¡:Lista sin el elemento.
+		 * 										  -> El elemento no estÃ¡: no cambia la lista.
 		 */
 		
 		assertNull(l1.remove(2));
@@ -124,13 +128,13 @@ public class CircularLinkedListTest {
 
 	@Test
 	public void testContains() {
-		/*Casos de prueba: Lista vacía.
-		 * 					Lista de un elemento-> El elemento está:True.
-		 * 										-> El elemento no está: False.
-		 * 				   Lista de dos elementos -> El elemento está:True.
-		 * 										  -> El elemento no está: False.
-		 * 				   Lista de varios elementos->El elemento está: True.
-		 * 										  -> El elemento no está: False.
+		/*Casos de prueba: Lista vacÃ­a.
+		 * 					Lista de un elemento-> El elemento estÃ¡:True.
+		 * 										-> El elemento no estÃ¡: False.
+		 * 				   Lista de dos elementos -> El elemento estÃ¡:True.
+		 * 										  -> El elemento no estÃ¡: False.
+		 * 				   Lista de varios elementos->El elemento estÃ¡: True.
+		 * 										  -> El elemento no estÃ¡: False.
 		 */
 		assertFalse(l0.contains(3));
 		
