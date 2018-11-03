@@ -36,11 +36,13 @@ public class CircularLinkedList<T> implements ListADT<T> {
 					
 		// COMPLETAR EL CODIGO Y CALCULAR EL COSTE
 		
-		
 		T temp = last.next.data; //Para guardar la informacion que se ha de devolver
 		
-		Node<T>act=last.next; 
-		last.next=act.next;
+		if(count>1) {
+			Node<T>act=last.next; 
+			last.next=act.next;
+		}
+		else{ last = null;}
 		
 		count=count-1;
 		return temp;
