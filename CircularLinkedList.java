@@ -171,13 +171,13 @@ public class CircularLinkedList<T> implements ListADT<T> {
 		   }
 
 	public T find(T elem) {
-	//Determina si la lista contiene un elemento concreto, y develve su referencia, null en caso de que no esté
+	//Determina si la lista contiene un elemento concreto, y develve su referencia, null en caso de que no este
 		//pre:
-		//post: devuelve la referencia del elemento buscado y null en caso de que no esté
+		//post: devuelve la referencia del elemento buscado y null en caso de que no este
 		
 		// COMPLETAR EL CODIGO Y CALCULAR EL COSTE --> O(n) coste lineal siendo n el numero de elementos de la lista
 		
-		int countAux = count; //si la lista esta vacía count es 0 y no entraría al bucle, por lo que devuelve null
+		int countAux = count; //si la lista esta vacia count es 0 y no entraria al bucle, por lo que devuelve data que esta inicializada a null
 		T data = null;
 		Boolean enc = false;
 		Node<T>act=last;
