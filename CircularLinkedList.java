@@ -58,25 +58,20 @@ public class CircularLinkedList<T> implements ListADT<T> {
 				 */
 			// COMPLETAR EL CODIGO Y CALCULAR EL COSTE
 		
-			Node<T> act= this.last;
-			T data=last.data;
-			int cont=0;
-			while(cont<this.count-1){
-				act=act.next;
-				cont=cont+1;
-			}
-			if (act!=null){
-				act.next=last.next;
-				this.last=act;
-				this.count=this.count-1;
-				
-			}
-			else{
-				this.last=null;
-				this.count=this.count-1;
-			}
-			return data;
-		   }
+		T eliminado = last.data;
+		Node<T>act=last.next;
+		if (count>1) {
+			while (act.next!=last) act=act.next; //termina en el elemento anterior al final
+			act.next=last.next;
+			last=act;
+		}
+		else {
+			last=null;
+		}
+		
+		count=count-1;
+		return eliminado;
+	}
 
 
 	public T remove(T elem) {
