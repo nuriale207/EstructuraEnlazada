@@ -73,7 +73,19 @@ public class CircularLinkedListTest {
 	@Test
 	public void testRemoveLast() {
 		l1.removeLast();
-		assertEquals(l1.size(),0);
+		assertSame(l1.size(),0);
+		assertEquals(l1.last,null);
+		
+		l2.removeLast();
+		assertEquals(l2.size(),1);
+		assertFalse(l2.contains(4));
+		assertTrue(l2.last.data==3);
+		assertTrue(l2.first()==3);
+		
+		l3.removeLast();
+		assertSame(l3.size(),3);
+		assertFalse(l3.contains(6));
+		assertTrue(l3.last.data==5);
 	}
 
 	@Test
